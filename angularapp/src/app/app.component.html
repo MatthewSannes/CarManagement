@@ -1,0 +1,31 @@
+<h1>Car Management</h1>
+
+<div>
+  <label for="txtYear">Year
+    <input id="txtYear" type="text" [(ngModel)]="carYear">
+  </label>
+  <label style="margin-left: 20px" for="txtMake">Make
+    <input id="txtMake" type="text" [(ngModel)]="carMake">
+  </label>
+  <label style="margin-left: 20px" for="txtModel">Model
+    <input id="txtModel" type="text" [(ngModel)]="carModel">
+  </label>
+  <button style="margin-left: 20px;" type="button" (click)="addCar()">Add</button>
+</div>
+<div>
+  <span ng-show="errorMessage" style="color: red">{{ errorMessage }}</span>
+</div>
+<div style="margin-top: 20px">
+  <table>
+    <tr>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+    </tr>
+    <tr *ngFor="let c of cars">
+      <td>{{ c.year  }}</td>
+      <td>{{ c.make }}</td>
+      <td>{{ c.model }}</td>
+    </tr>
+  </table>
+</div>
